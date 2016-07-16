@@ -35,7 +35,7 @@ gulp.task('images.optimize', '- optimize images.', function () {
 	aliases: [cfg.tasks.alias + ':io']
 });
 
-gulp.task('images.sprite', '- build sprite.', function () {
+gulp.task('images.sprite', '- build sprite.', ['images.optimize'], function () {
 
 	return plugins.sprity.src(cfg.plugins.sprity)
 				  .on('error', swallowError)
