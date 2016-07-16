@@ -1,0 +1,92 @@
+//
+// CleverStaff Theme
+// --------------------------------------------------
+
+// Core Framework
+// -------------------------
+@import "bootstrap/bootstrap";
+
+
+// Theme styles
+// -------------------------
+@import "variables";
+//@import "mixins/mixins";
+
+//
+//
+
+
+// Import Vendor dependency styles
+// -------------------------
+@import "vendor/vendor";
+
+
+// DEMO/TEST
+// =========================
+.block-menu {
+	margin: 10px 0 0;
+	border: 1px solid transparent;
+
+	transition: border-color 200ms ease;
+
+	&:before {
+		content: '';
+	}
+
+	&:after {
+		content: '';
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		//
+	}
+
+	&:hover {
+		border-color: #EF404A;
+	}
+
+	&-title {
+		margin-bottom: 10px;
+		padding: 10px;
+	}
+
+	&-content {
+		padding: 10px;
+	}
+
+	.menu-list {
+		padding: 5px;
+
+		&-item {
+			.link {
+				display: block;
+				padding: 3px 5px;
+			}
+		}
+	}
+
+	/* Small devices (tablets, 768px and up) */
+	@media (max-width: $screen-sm-min) {
+		.menu-list {
+			&-item {
+				.link {
+					padding: 5px 10px;
+				}
+			}
+		}
+	}
+
+	/* Medium devices (desktops, 992px and up) */
+	@media (min-width: $screen-md-min) {
+		//
+	}
+
+	/* Large devices (large desktops, 1200px and up) */
+	@media (min-width: $screen-lg-min) {
+
+	}
+}

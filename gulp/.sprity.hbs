@@ -1,0 +1,27 @@
+${{layouts.[0].classname}}-margin: ({{layouts.[0].layout.items.[0].width}} - {{layouts.[0].layout.items.[0].meta.width}}) / 2;
+
+{{#each layouts}}
+  {{#each sprites}}
+
+    {{#if dpi}}
+    @media (-webkit-min-device-pixel-ratio: {{ratio}}), (min-resolution: {{dpi}}dpi) {
+    {{/if}}
+    .{{cssesc ../classname}} {
+      background-image: url('{{escimage url}}');
+      {{#if dpi}}
+      background-size: {{baseWidth}}px {{baseHeight}}px;
+      {{/if}}
+    }
+    {{#if dpi}}
+    }
+    {{/if}}
+  {{/each}}
+
+  {{#each layout.items}}
+  .{{../classname}}-{{meta.name}} {
+    background-position: (-{{baseDim x}}px - $sprite-margin) (-{{baseDim y}}px - $sprite-margin);
+    width: {{baseDim meta.width}}px;
+    height: {{baseDim meta.height}}px;
+  }
+  {{/each}}
+{{/each}}
