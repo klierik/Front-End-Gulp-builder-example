@@ -3,4 +3,6 @@ node_modules/
 dist/css/*.css
 dist/js/*.js
 vendor/twbs/bootstrap/assets/
-images/sprite.png
+
+sprite.png
+_sprite.scss

@@ -21,7 +21,7 @@ function swallowError(error) {
 // Tasks init
 gulp.task('watch.styles', 'Watch and build styles.', function () {
 
-	gulp.watch(cfg.source.sass.dir + '**/*.scss', ['styles']);
+	gulp.watch(cfg.path.stylesDir + '**/*.scss', ['styles']);
 }, {
 	aliases: [cfg.tasks.alias + ":ws"]
 });
@@ -29,10 +29,10 @@ gulp.task('watch.styles', 'Watch and build styles.', function () {
 gulp.task('organise.styles', 'Organise and format styles with CssComb.', function () {
 
 	return gulp
-		.src([cfg.source.sass.dir + '**/*.scss', '!' + cfg.source.sass.dir + '**/*variables*'])
+		.src([cfg.path.stylesDir + '**/*.scss', '!' + cfg.path.stylesDir + '**/*variables*'])
 		.pipe(plugins.gulpif(args.debug == true, plugins.debug()))
 		.pipe(plugins.csscomb(cfg.path.rootDir + 'gulp/.csscomb.json'))
-		.pipe(gulp.dest(cfg.source.sass.dir));
+		.pipe(gulp.dest(cfg.path.stylesDir));
 
 }, {
 	aliases: [cfg.tasks.alias + ":os"]
