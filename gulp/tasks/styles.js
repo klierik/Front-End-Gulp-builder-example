@@ -4,10 +4,7 @@ var gulp    = require('gulp-help')(require('gulp')),
 	plugins = require('gulp-load-plugins')(),
 	args    = require('yargs').argv;
 
-plugins.gulpif    = require('gulp-if');
-//plugins.fs        = require('fs');
-//plugins.merge     = require('merge');
-//plugins.penthouse = require('penthouse');
+plugins.gulpif = require('gulp-if');
 
 var cfg = require('../../gulpconfig.js')();
 
@@ -38,7 +35,7 @@ gulp.task('organise.styles', 'Organise and format styles with CssComb.', functio
 	aliases: [cfg.tasks.alias + ":os"]
 });
 
-gulp.task('styles', 'Build all styles.', function () {
+gulp.task('styles', 'Build all styles.', ['organise.styles'], function () {
 
 	return gulp
 		.src(cfg.styles.files)
