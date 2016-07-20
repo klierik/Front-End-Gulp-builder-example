@@ -74,8 +74,8 @@ module.exports = function () {
 			, sourceRoot:   config.stylesDir
 		},
 		sprity:       {
-			src:           config.images.spriteDir + '*.png'
-			, cssPath:     config.path.imagesDir
+			src:           config.images.spriteDir + '**/*.{png,jpg}'
+			, cssPath:     '../../images/' // dist/css to images/ folder relative path
 			, margin:      8
 			, name:        'sprite'
 			, orientation: 'binary-tree'
