@@ -5,7 +5,7 @@ Just another one Gulp builder for Front-end development [bootstrap/sass/csscomb/
 Run ```$npm i``` and install NPM modules
 
 # Download Bootstrap
-Download latest (Bootstrap 3 SASS)[https://github.com/twbs/bootstrap-sass/archive/master.zip] and unpack it to ```/vendor/twbs/bootstrap/assets``` folder. Then you can clean up and get:
+Download latest [Bootstrap 3 SASS](https://github.com/twbs/bootstrap-sass/archive/master.zip) and unpack it to ```/vendor/twbs/bootstrap/assets``` folder. Then you can clean up and get:
 ```
 .
 └── assets
