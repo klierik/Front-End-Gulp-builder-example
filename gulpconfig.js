@@ -92,7 +92,7 @@ module.exports = function () {
 			}
 		},
 		sourcemaps:   {
-			includeContent: false
+			includeContent: true
 			, sourceRoot:   config.stylesDir
 		},
 		sprity:       {
