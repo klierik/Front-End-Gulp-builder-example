@@ -8,7 +8,7 @@ Run ```$npm i``` and install NPM modules
 Download latest [Bootstrap 3 SASS](https://github.com/twbs/bootstrap-sass/archive/master.zip) and unpack it to ```/vendor/twbs/bootstrap/assets``` folder. Then you can clean up and get:
 ```
 .
-└── assets
+└── /vendor/twbs/bootstrap/assets/
     ├── fonts
     ├── images
     ├── javascripts
