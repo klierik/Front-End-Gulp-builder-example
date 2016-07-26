@@ -25,16 +25,17 @@
 // =========================
 .block-menu {
 	margin: 10px 0 0;
-	border: 1px solid transparent;
 
 	transition: border-color 200ms ease;
 
+	border: 1px solid transparent;
+
 	&:before {
-		content: '';
+		content: "";
 	}
 
 	&:after {
-		content: '';
+		content: "";
 	}
 
 	&:first-child {
@@ -46,7 +47,7 @@
 	}
 
 	&:hover {
-		border-color: #EF404A;
+		border-color: #ef404a;
 	}
 
 	&-title {
@@ -87,6 +88,5 @@
 
 	/* Large devices (large desktops, 1200px and up) */
 	@media (min-width: $screen-lg-min) {
-
 	}
 }

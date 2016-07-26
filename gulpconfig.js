@@ -42,6 +42,28 @@ module.exports = function () {
 	};
 
 	//
+	// scripts configuration
+	config.scripts = {
+		bootstrap: {
+			filename: 'bootstrap.js',
+			files:    [
+				config.path.vendorDir + "twbs/bootstrap/assets/javascripts/bootstrap/affix.js"
+				, config.path.vendorDir + "twbs/bootstrap/assets/javascripts/bootstrap/alert.js"
+				, config.path.vendorDir + "twbs/bootstrap/assets/javascripts/bootstrap/button.js"
+				, config.path.vendorDir + "twbs/bootstrap/assets/javascripts/bootstrap/carousel.js"
+				, config.path.vendorDir + "twbs/bootstrap/assets/javascripts/bootstrap/collapse.js"
+				, config.path.vendorDir + "twbs/bootstrap/assets/javascripts/bootstrap/dropdown.js"
+				, config.path.vendorDir + "twbs/bootstrap/assets/javascripts/bootstrap/tab.js"
+				, config.path.vendorDir + "twbs/bootstrap/assets/javascripts/bootstrap/transition.js"
+				, config.path.vendorDir + "twbs/bootstrap/assets/javascripts/bootstrap/scrollspy.js"
+				, config.path.vendorDir + "twbs/bootstrap/assets/javascripts/bootstrap/modal.js"
+				, config.path.vendorDir + "twbs/bootstrap/assets/javascripts/bootstrap/tooltip.js"
+				, config.path.vendorDir + "twbs/bootstrap/assets/javascripts/bootstrap/popover.js"
+			]
+		}
+	};
+
+	//
 	// Tasks configuration
 	config.tasks = {
 		alias: "cs"
