@@ -64,12 +64,6 @@ module.exports = function () {
 	};
 
 	//
-	// Tasks configuration
-	config.tasks = {
-		alias: "cs"
-	};
-
-	//
 	// Plugins configuration
 	config.plugins = {
 		autoprefixer: {

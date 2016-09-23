@@ -16,14 +16,14 @@ function swallowError(error) {
 }
 
 // Tasks init
-gulp.task('watch.styles', 'Watch and build styles.', function () {
+gulp.task('Watch:Styles', 'Watch and build styles.', function () {
 
-	gulp.watch(cfg.path.stylesDir + '**/*.scss', ['styles']);
+	gulp.watch(cfg.path.stylesDir + '**/*.scss', ['Styles']);
 }, {
-	aliases: [cfg.tasks.alias + ":ws"]
+	aliases: ["ws"]
 });
 
-gulp.task('organise.styles', 'Organise and format styles with CssComb.', function () {
+gulp.task('Organise:Styles', 'Organise and format styles with CssComb.', function () {
 
 	return gulp
 		.src([cfg.path.stylesDir + '**/*.scss', '!' + cfg.path.stylesDir + '**/*variables*'])
@@ -32,10 +32,10 @@ gulp.task('organise.styles', 'Organise and format styles with CssComb.', functio
 		.pipe(gulp.dest(cfg.path.stylesDir));
 
 }, {
-	aliases: [cfg.tasks.alias + ":os"]
+	aliases: ["os"]
 });
 
-gulp.task('styles', 'Build all styles.', ['organise.styles'], function () {
+gulp.task('Styles', 'Build all styles.', ['Organise:Styles'], function () {
 
 	return gulp
 		.src(cfg.styles.files)
@@ -49,7 +49,7 @@ gulp.task('styles', 'Build all styles.', ['organise.styles'], function () {
 		.pipe(gulp.dest(cfg.path.distCssDir));
 
 }, {
-	aliases: [cfg.tasks.alias + ':s'],
+	aliases: ['s'],
 	options: {
 		"dev":   "- run in development mode",
 		"debug": "- output debug"

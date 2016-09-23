@@ -22,7 +22,7 @@ function swallowError(error) {
 
 // Tasks init
 
-gulp.task('scripts', 'Build all scripts.', function () {
+gulp.task('JavaScripts', 'Build all scripts.', function () {
 
 	return plugins.es.merge(scriptsFiles.map(function (obj) {
 		return gulp
@@ -34,16 +34,16 @@ gulp.task('scripts', 'Build all scripts.', function () {
 	}));
 
 }, {
-	aliases: [cfg.tasks.alias + ':js'],
+	aliases: ['js'],
 	options: {
 		"dev":   "- run in development mode",
 		"debug": "- output debug"
 	}
 });
 
-gulp.task('watch.scripts', 'Watch and build scripts.', function () {
+gulp.task('Watch:JavaScripts', 'Watch and build scripts.', function () {
 
-	gulp.watch(cfg.path.jsDir + '**/*.js', ['scripts']);
+	gulp.watch(cfg.path.jsDir + '**/*.js', ['JavaScripts']);
 }, {
-	aliases: [cfg.tasks.alias + ":wjs"]
+	aliases: ["wjs"]
 });

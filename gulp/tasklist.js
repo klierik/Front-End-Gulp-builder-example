@@ -9,7 +9,7 @@ var cfg = require('../gulpconfig.js')();
 
 // Init Default gulp task
 gulp.task('default', 'Run all builds', function (done) {
-	plugins.runSequence('images', 'styles', 'scripts', function () {
+	plugins.runSequence('Images', 'Styles', 'JavaScripts', function () {
 		// console.log('Run something else');
 		done();
 	});

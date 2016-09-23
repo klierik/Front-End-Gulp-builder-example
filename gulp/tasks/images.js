@@ -17,19 +17,19 @@ function swallowError(error) {
 	this.emit('end')
 }
 
-gulp.task('images', 'Optimize images and build Sprite.', function(done){
-	plugins.runSequence('images.optimize', 'images.sprite', 'images.optimize.sprite', function () {
+gulp.task('Images', 'Optimize images and build Sprite.', function(done){
+	plugins.runSequence('Images:Optimize', 'Images:Sprite', 'Images:Optimize:Sprite', function () {
 		done();
 	});
 }, {
-	aliases: [cfg.tasks.alias + ':i'],
+	aliases: ['i'],
 	options: {
 		"dev":   "- run in development mode",
 		"debug": "- output debug"
 	}
 });
 
-gulp.task('images.optimize', '- optimize images.', function () {
+gulp.task('Images:Optimize', '- optimize Images:', function () {
 
 	return gulp
 		.src(cfg.path.imagesDir + '**/*')
@@ -38,10 +38,10 @@ gulp.task('images.optimize', '- optimize images.', function () {
 		.pipe(gulp.dest(cfg.path.imagesDir));
 
 }, {
-	aliases: [cfg.tasks.alias + ':io']
+	aliases: ['io']
 });
 
-gulp.task('images.sprite', '- build sprite.', function () {
+gulp.task('Images:Sprite', '- build sprite.', function () {
 
 	return plugins.sprity.src(cfg.plugins.sprity)
 				  .pipe(plugins.gulpif(args.debug == true, plugins.debug()))
@@ -49,11 +49,11 @@ gulp.task('images.sprite', '- build sprite.', function () {
 				  .pipe(plugins.gulpif('*.png', gulp.dest(cfg.path.imagesDir), gulp.dest(cfg.path.stylesDir)));
 
 }, {
-	aliases: [cfg.tasks.alias + ':is']
+	aliases: ['is']
 });
 
 
-gulp.task('images.optimize.sprite', '- optimize images.', function () {
+gulp.task('Images:Optimize:Sprite', '- optimize Images:', function () {
 
 	return gulp
 		.src(cfg.path.imagesDir + cfg.plugins.sprity.name + '.png')
@@ -62,5 +62,5 @@ gulp.task('images.optimize.sprite', '- optimize images.', function () {
 		.pipe(gulp.dest(cfg.path.imagesDir));
 
 }, {
-	aliases: [cfg.tasks.alias + ':ios']
+	aliases: ['ios']
 });
